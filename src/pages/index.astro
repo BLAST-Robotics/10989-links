@@ -1,0 +1,238 @@
+---
+import '../styles/global.css';
+import linksData from '../data/links.json';
+
+const { categories } = linksData;
+categories.sort((a, b) => a.priority - b.priority);
+
+/* Mission Control Theme Constants */
+const teamColors = [
+  '#E60004', // B
+  '#F23B0C', // L
+  '#F2690C', // A
+  '#FCA817', // S
+  '#FED11C'  // T
+];
+---
+
+<html lang="en" data-theme="dark">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Optimization -->
+		<title>Mission Control | FRC 10989 Blast Robotics</title>
+		<meta name="description" content="The official Quick Links dashboard for FRC Team 10989 Blast Robotics. Access our Engineering Notebook, CAD, Open Alliance thread, and team resources." />
+		<meta name="keywords" content="FRC 10989, Blast Robotics, FIRST Robotics, Engineering Notebook, Open Alliance, Luna CAD, Team 10989" />
+		<link rel="canonical" href="https://team10989.org/links" />
+		
+		<!-- Open Graph / Meta Control -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://team10989.org/links" />
+		<meta property="og:title" content="Mission Control | FRC 10989 Blast Robotics" />
+		<meta property="og:description" content="Access the 10989 Mission Control dashboard. 2026 Engineering Notebook, Real-time CAD, and Open Alliance." />
+		<meta property="og:image" content="https://placehold.co/1200x630/000000/F2690C/png?text=10989+MISSION+CONTROL" />
+
+		<!-- Twitter Meta -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Mission Control | FRC 10989 Blast Robotics" />
+		<meta name="twitter:description" content="Mission Control: Official resource matrix for BLAST Robotics." />
+		<meta name="twitter:image" content="https://placehold.co/1200x630/000000/F2690C/png?text=10989+MISSION+CONTROL" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://team10989.org/links" />
+		<meta property="og:title" content="Mission Control | FRC 10989 Blast Robotics" />
+		<meta property="og:description" content="Quick access to all essential resources for FRC 10989 Blast Robotics. Engineering, Business, and Competition links in one place." />
+		<meta property="og:image" content="https://team10989.org/og-image.jpg" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://team10989.org/links" />
+		<meta property="twitter:title" content="Mission Control | FRC 10989 Blast Robotics" />
+		<meta property="twitter:description" content="Quick access to all essential resources for FRC 10989 Blast Robotics. Engineering, Business, and Competition links in one place." />
+		<meta property="twitter:image" content="https://team10989.org/og-image.jpg" />
+
+		<!-- Space Grotesk for Headings, DM Sans for Content -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+		
+		<style>
+			:root {
+				--font-heading: 'Space Grotesk', sans-serif;
+				--font-body: 'DM Sans', sans-serif;
+			}
+			html {
+				background-color: #000000;
+			}
+			body {
+				font-family: var(--font-body);
+				background-color: transparent;
+			}
+			h1, h2, h3, .heading-font {
+				font-family: var(--font-heading);
+				letter-spacing: 0.05em;
+			}
+			.mission-grid {
+				display: grid;
+				grid-template-columns: repeat(1, minmax(0, 1fr));
+				gap: 1.5rem;
+			}
+			@media (min-width: 640px) {
+				.mission-grid {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+			}
+			@media (min-width: 1024px) {
+				.mission-grid {
+					grid-template-columns: repeat(3, minmax(0, 1fr));
+				}
+			}
+			@media (min-width: 1280px) {
+				.mission-grid {
+					grid-template-columns: repeat(4, minmax(0, 1fr));
+				}
+			}
+		</style>
+	</head>
+	<body class="min-h-screen text-white p-4 md:p-12 relative overflow-x-hidden selection:bg-[#F2690C] selection:text-black">
+		
+		<!-- Parallax Starry Background -->
+		<div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#050505]">
+			<!-- Grid Background -->
+			<div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" id="grid-bg"></div>
+			
+			<div class="star-layer stars-1" id="stars1"></div>
+			<div class="star-layer stars-2" id="stars2"></div>
+			<div class="star-layer stars-3" id="stars3"></div>
+			
+			<!-- Lava Glow Effects -->
+			<div class="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-[#F2690C]/20 blur-[120px] rounded-full mix-blend-screen"></div>
+			<div class="absolute bottom-[-10%] right-[-10%] w-[70%] h-[70%] bg-[#E60004]/15 blur-[150px] rounded-full mix-blend-screen"></div>
+		</div>
+
+		<div class="max-w-7xl mx-auto space-y-16 relative z-10">
+			
+			<!-- Friendly Welcoming Header -->
+			<header class="text-center py-16 md:py-28 border-b border-white/10 mb-12 backdrop-blur-md bg-white/5 rounded-[4rem] shadow-[0_0_50px_rgba(242,105,12,0.1)] relative overflow-hidden group">
+				<!-- Lava beam behind title -->
+				<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-32 bg-gradient-to-r from-transparent via-[#F2690C]/20 to-transparent blur-3xl group-hover:via-[#F2690C]/40 transition-all duration-700"></div>
+				
+				<div class="inline-block mb-6 relative z-10">
+					<div class="flex space-x-2 h-2 w-full mb-4 rounded-full overflow-hidden">
+						{teamColors.map(color => (
+							<div class="flex-1 h-full w-14" style={`background-color: ${color}`}></div>
+						))}
+					</div>
+					<p class="text-[#F2690C] font-bold text-xl md:text-2xl tracking-[0.4em] uppercase mb-2 drop-shadow-sm">
+						FRC Team 10989 • Blast Robotics
+					</p>
+				</div>
+				
+				<h1 class="text-6xl md:text-9xl font-bold tracking-tighter text-white uppercase mb-6 drop-shadow-lg leading-none">
+					Mission <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F2690C] to-[#FED11C]">Control</span>
+				</h1>
+				<p class="text-white/70 max-w-3xl mx-auto text-xl md:text-3xl font-light px-4 leading-relaxed">
+					All systems go! Access the <span class="text-white font-medium">10989 resource matrix</span> for the 2026 Season.
+				</p>
+			</header>
+
+			<!-- Categories -->
+			{categories.map((category) => (
+				<section class="space-y-10">
+					<div class="flex items-center space-x-6 mb-10 group">
+						<div class="h-12 w-2.5 bg-gradient-to-b from-[#F2690C] to-[#FED11C] rounded-full shadow-[0_0_25px_rgba(242,105,12,0.8)] group-hover:shadow-[0_0_35px_rgba(254,209,28,0.8)] transition-shadow duration-500"></div>
+						<h2 class="text-4xl md:text-7xl font-bold uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 leading-none">
+							{category.name}
+						</h2>
+						<div class="h-px bg-gradient-to-r from-white/20 to-transparent flex-grow"></div>
+					</div>
+
+					<div class="mission-grid">
+						{category.links.map((link) => (
+							<a href={link.url} target="_blank" rel="noopener noreferrer" class="group h-full block">
+								<div class="card bg-[#0a0a0a]/80 backdrop-blur-sm hover:bg-[#111111] border border-white/10 hover:border-[#F2690C]/60 transition-all duration-500 shadow-xl hover:shadow-[0_0_30px_rgba(242,105,12,0.2)] h-full overflow-hidden rounded-[3rem] hover:-translate-y-4 relative group/card">
+									<div class="absolute inset-0 bg-gradient-to-b from-[#F2690C]/0 to-[#F2690C]/0 group-hover/card:from-[#F2690C]/5 group-hover/card:to-transparent transition-all duration-500 pointer-events-none z-20"></div>
+									
+									<figure class="h-56 md:h-72 w-full overflow-hidden relative bg-black">
+										{link.image ? (
+											<img src={link.image} alt={link.title} class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110 transform" />
+										) : (
+											<div class="w-full h-full flex items-center justify-center text-[#F2690C]/20 text-8xl font-bold bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#F2690C]/10 via-black to-black group-hover:scale-110 transition-transform duration-700">
+												10989
+											</div>
+										)}
+										<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/90 via-[#0a0a0a]/20 to-transparent"></div>
+										
+										<div class="absolute top-6 right-6 bg-black/80 backdrop-blur-md p-4 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 shadow-lg">
+											<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F2690C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+										</div>
+									</figure>
+
+									<div class="card-body p-10 pt-4 relative z-10">
+										<h3 class="card-title text-3xl md:text-4xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#F2690C] group-hover:to-[#FED11C] mb-4 leading-tight transition-all duration-300">
+											{link.title}
+										</h3>
+										<p class="text-lg md:text-xl text-white/60 font-normal leading-relaxed line-clamp-3 group-hover:text-white/80 transition-colors duration-300">
+											{link.summary}
+										</p>
+										<div class="card-actions justify-end mt-10">
+											<div class="flex items-center gap-3 px-8 py-4 bg-white/5 group-hover:bg-gradient-to-r group-hover:from-[#F2690C]/20 group-hover:to-[#FED11C]/20 rounded-full border border-white/10 group-hover:border-[#F2690C]/50 transition-all duration-300 shadow-sm group-hover:shadow-[0_0_15px_rgba(242,105,12,0.4)]">
+												<span class="text-[#F2690C] group-hover:text-[#FED11C] text-xl font-bold uppercase tracking-[0.2em] transition-colors duration-300">
+													Initiate
+												</span>
+												<span class="translate-x-0 group-hover:translate-x-3 transition-transform duration-300 text-[#F2690C] group-hover:text-[#FED11C] text-3xl">&rarr;</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						))}
+					</div>
+				</section>
+			))}
+
+			<!-- Friendly Footer -->
+			<footer class="text-center py-32 text-white/30 text-xl font-medium border-t border-white/10 mt-20 relative">
+				<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#F2690C]/50 to-transparent"></div>
+				<div class="flex justify-center space-x-10 mb-12 text-5xl">
+					<span class="hover:scale-150 transition-transform duration-300 cursor-default drop-shadow-[0_0_15px_rgba(242,105,12,0.5)]">🌋</span>
+					<span class="hover:scale-150 transition-transform duration-300 cursor-default drop-shadow-[0_0_15px_rgba(254,209,28,0.5)]">☄️</span>
+					<span class="hover:scale-150 transition-transform duration-300 cursor-default drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">🤖</span>
+				</div>
+				<p class="tracking-[0.6em] mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#F2690C] to-[#FED11C] uppercase font-bold text-2xl">A-Level Output • 10989 Standard</p>
+				<p class="mb-4 font-mono text-2xl text-white/50">&copy; 2026 BLAST ROBOTICS // FRC 10989</p>
+				<p class="text-sm text-white/20 uppercase tracking-[0.8em]">Ignited by Mission Control</p>
+			</footer>
+		</div>
+
+		<!-- Robust Parallax Script -->
+		<script is:inline>
+			function updateParallax() {
+				const scrollY = window.pageYOffset;
+				const stars1 = document.getElementById('stars1');
+				const stars2 = document.getElementById('stars2');
+				const stars3 = document.getElementById('stars3');
+				const gridBg = document.getElementById('grid-bg');
+				
+				// Using requestAnimationFrame for smooth 60fps movement
+				window.requestAnimationFrame(() => {
+					// Moving stars UPWARD relative to scroll for better depth effect
+					// We use translateY in addition to the background-position animation in CSS
+					if (stars1) stars1.style.transform = `translate3d(0, ${-scrollY * 0.1}px, 0)`;
+					if (stars2) stars2.style.transform = `translate3d(0, ${-scrollY * 0.25}px, 0)`;
+					if (stars3) stars3.style.transform = `translate3d(0, ${-scrollY * 0.45}px, 0)`;
+					if (gridBg) gridBg.style.transform = `translate3d(0, ${scrollY * 0.05}px, 0)`;
+				});
+			}
+			
+			window.addEventListener('scroll', updateParallax, { passive: true });
+			// Initial call
+			updateParallax();
+		</script>
+	</body>
+</html>

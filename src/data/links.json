@@ -1,0 +1,130 @@
+{
+  "categories": [
+    {
+      "name": "Judicial & Open Alliance",
+      "priority": 1,
+      "links": [
+        {
+          "title": "2026 Engineering Notebook",
+          "url": "https://docs.google.com/presentation/d/1TKA4kblSGFmxMVKNnUOyh8Wb5blu_pqKj1n0VN_wsS8/export/pdf",
+          "summary": "150+ pages of student-driven technical documentation and iteration.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Engineering+Notebook"
+        },
+        {
+          "title": "FRC Budget (Open Books)",
+          "url": "https://docs.google.com/spreadsheets/d/10PQmQtEXYr0YeWtZOSN2BfhMToFQFOcqj6wm3fnOgMs/",
+          "summary": "Live $90k budget with full financial transparency and procurement logs.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Budget"
+        },
+        {
+          "title": "Robot Live CAD (Luna)",
+          "url": "https://cad.onshape.com/documents/4e1f5e80f533a16b4129929b/w/b0b7d2d99087c88689faa2f4/e/d0954766e06e63ac7a0d3f0c",
+          "summary": "Real-time digital twin showing custom shooter and asymmetric build.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=CAD+Model"
+        },
+        {
+          "title": "2026 Business Plan",
+          "url": "https://docs.google.com/presentation/d/1fIvWtPWNffgyv4R0ss0oz6MhxHuQ-LLq_uVG6f8oTNQ/",
+          "summary": "Long-term sustainability and growth roadmap.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Business+Plan"
+        },
+        {
+          "title": "Open Alliance Thread",
+          "url": "https://www.chiefdelphi.com/t/frc-10989-blast-robotics-2026-build-thread-rookie-open-alliance/513444",
+          "summary": "Global build-season documentation and community knowledge sharing.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Open+Alliance"
+        }
+      ]
+    },
+    {
+      "name": "Technical & Competition",
+      "priority": 2,
+      "links": [
+        {
+          "title": "GitHub Repositories",
+          "url": "https://github.com/orgs/BLAST-Robotics/repositories",
+          "summary": "Organization-wide code for robot control and web infrastructure.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=GitHub"
+        },
+        {
+          "title": "Team Website",
+          "url": "https://team10989.org/",
+          "summary": "Main landing page for Blast 10989.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Team+Website"
+        },
+        {
+          "title": "The Blue Alliance",
+          "url": "https://www.thebluealliance.com/team/10989",
+          "summary": "Live match results and team performance statistics.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Blue+Alliance"
+        },
+        {
+          "title": "FIRST Inspires Profile",
+          "url": "https://www.firstinspires.org/team-event-search/team/10989",
+          "summary": "Official event registration and eligibility.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=FIRST+Inspires"
+        }
+      ]
+    },
+    {
+      "name": "Crew Quarters (Internal)",
+      "priority": 3,
+      "links": [
+        {
+          "title": "Assignments Folder",
+          "url": "https://drive.google.com/drive/folders/1zOhVWdgGaA8UV2J7t5FYjGsRfYlXr5aO",
+          "summary": "Internal task tracking and project management.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Assignments"
+        },
+        {
+          "title": "Season Strategy Plan",
+          "url": "https://docs.google.com/document/d/1ZbLwopRMbJBrZOZ0AzMK4fbmcl9hMXMR8pjbIBLlijg/",
+          "summary": "2026 Season gameplay and strategy analysis.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Strategy"
+        },
+        {
+          "title": "Founding Program Plan",
+          "url": "https://docs.google.com/document/d/13yMeKCYuqoxO5t5jfzmL2J6hE6_7NemZGS-lW40d1X8/",
+          "summary": "Blast Robotics foundational organizational structure.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Program+Plan"
+        },
+        {
+          "title": "Student Handbook",
+          "url": "https://docs.google.com/document/d/1AqflfV4xVs4ec1DxcB9hki3Kwj1U8uTAe6A56TlDg7I/",
+          "summary": "Team culture, safety standards, and code of conduct.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Handbook"
+        },
+        {
+          "title": "Three-Bot Build Schedule",
+          "url": "https://docs.google.com/document/d/10_j6xtvzsVtUQBqgkA0ryy5GF8wYf1pfXUxvazlEyvM/",
+          "summary": "Sputnik, Vostok, and Luna development timelines.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Build+Schedule"
+        }
+      ]
+    },
+    {
+      "name": "Outreach & Training",
+      "priority": 4,
+      "links": [
+        {
+          "title": "Summer Camp Interest (Parents)",
+          "url": "https://docs.google.com/forms/d/e/1FAIpQLSfXn7tI1a_aVIEodOkfjcA9SFZGghDY3NsJkhrqYfkM0TP3uQ/viewform",
+          "summary": "Interest form for grades 4-9 summer STEM programs.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Summer+Camp"
+        },
+        {
+          "title": "Summer Camp Staffing",
+          "url": "https://docs.google.com/forms/d/e/1FAIpQLSc3pnOT--IBTpKo1Kz_hanwkfolnbI-cIlZYn7aKZ67KEJcSA/viewform",
+          "summary": "Volunteer opportunities for high school student leaders.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Staffing"
+        },
+        {
+          "title": "Training Vault",
+          "url": "https://docs.google.com/document/d/1mz_Q4wkFzb4XeAZ9AmRH6Rj94NiRNRNeDvcGqegzKco/",
+          "summary": "Resources for mechanical, electrical, and coding fundamentals.",
+          "image": "https://placehold.co/600x400/F2690C/FFFFFF/png?text=Training"
+        }
+      ]
+    }
+  ]
+}
