@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import linksData from '../data/links.json';
+import Analytics from '@vercel/analytics/astro'
 
 const { categories } = linksData;
 categories.sort((a, b) => a.priority - b.priority);
